@@ -1,0 +1,30 @@
+﻿@model lab1rework.Models.UserLogin
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h2>ĐĂNG NHẬP</h2>
+<div class="row-cols-md-auto">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+        <div class="mb-3 row col-12">
+            <h5>Tên đăng nhập</h5>
+            <div class="mb-3 col-4">@Html.TextBoxFor(m => m.UserName, new { @class = "form-control" })</div>
+            <div class="col-4">@Html.ValidationMessageFor(Model => Model.UserName, "", new { @class = "text-danger" })</div>
+        </div>
+
+        <div class="mb-3 row col-12">
+            <h5>Tên đăng nhập</h5>
+            <div class="mb-3 col-4">@Html.PasswordFor(m => m.Password, new { @class = "form-control" })</div>
+            <div class="col-4">@Html.ValidationMessageFor(Model => Model.Password, "", new { @class = "text-danger" })</div>
+        </div>
+        <button type="submit" class="btn btn-primary">Đăng nhập</button>
+        <br />
+        <label class="text-primary">@ViewBag.ThongBao</label>
+        
+    }
+
+</div>
+

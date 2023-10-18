@@ -1,0 +1,54 @@
+﻿
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse">
+            
+                <a class="navbar-brand" href="~/SachOnline/Index">SachOnline</a>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sach Theo CD
+                        </a>
+                        <ul class="dropdown-menu">
+                            @foreach (lab1rework.Models.CHUDE item in Model.CHUDEs)
+                            {
+                                <li><a class="dropdown-item" href="@Url.Action("SachTheoCD", "SachOnline", new {MaCD = item.MaCD})">@item.TenChuDe</a></li>
+                            }
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Sach Theo NXB
+                        </a>
+                        <ul class="dropdown-menu">
+                            @foreach (lab1rework.Models.NHAXUATBAN item in Model.NHAXUATBANs)
+                            {
+                                <li><a class="dropdown-item" href="@Url.Action("SachTheoNXB", "SachOnline", new {MaNXB = item.MaNXB})">@item.TenNXB</a></li>
+                            }
+                        </ul>
+                    </li>
+                </ul>
+            
+            @if (Session["Taikhoan"] != null)
+            {
+                <div style="position:absolute;right:0">
+                    <a href="@Url.Action("GioHang", "SachOnline")"
+                       class="btn btn-outline-success me-2" style="width:130px">Giỏ hàng</a>
+                    <a href="@Url.Action("DangXuat", "User")"
+                       class="btn btn-outline-success me-2" style="width:130px">Đăng xuất</a>
+                </div>
+            }
+            else
+            {
+            <div style="position:absolute;right:0">
+                <a href="@Url.Action("DangNhap", "User")" 
+                   class="btn btn-outline-success me-2" style="width:130px">Đăng nhập</a>
+                <a href="@Url.Action("DangKy", "User")" 
+                   class="btn btn-outline-success me-2" style="width:130px">Đăng ký</a>
+            </div>
+            }
+        </div>
+    </div>
+</nav>
