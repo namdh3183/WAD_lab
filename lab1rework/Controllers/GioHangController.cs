@@ -36,7 +36,7 @@ namespace lab1rework.Controllers
                 var model = (from ct in lstCtGiohang
                              join s in db.SACHes
                              on ct.Masach equals s.Masach
-                             select new { Masach = ct.Masach, Tensach = s.Tensach, Anhbia = s.Anhbia, 
+                             select new { MaDonHang = ct.MaDonHang, Masach = ct.Masach, Tensach = s.Tensach, Anhbia = s.Anhbia, 
                                  Giaban = s.Giaban, Soluong = ct.Soluong, Thanhtien = ct.Soluong * s.Giaban }).Select(t => t.ToExpando()).ToList();
                 return View(model);
             }
@@ -82,7 +82,33 @@ namespace lab1rework.Controllers
                 db.SaveChanges();
             }
 
-            return View(Masach);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult CapnhatGioHang(int MaDonHang, int MaSach, int SoLuong)
+        {
+            var ct = db.CHITIETDONTHANGs.FirstOrDefault(t => t.MaDonHang == MaDonHang && t.Masach == MaSach);
+            if (SoLuong == 0)
+            {
+                db.CHITIETDONTHANGs.Remove(ct);
+            }
+            else
+            {
+                ct.Soluong = SoLuong;
+                db.CHITIETDONTHANGs.AddOrUpdate(ct);
+            }
+            db.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult XoaGioHang(int MaDonHang, int MaSach)
+        {
+            var ct = db.CHITIETDONTHANGs.FirstOrDefault(t => t.MaDonHang == MaDonHang && t.Masach == MaSach);
+            db.CHITIETDONTHANGs.Remove(ct);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
         }
     }
 }

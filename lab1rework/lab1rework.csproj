@@ -240,7 +240,6 @@
     <Content Include="Views\Shared\ChuDePartial.cshtml" />
     <Content Include="Views\Shared\NhaXuatBanPartial.cshtml" />
     <Content Include="Views\Shared\SachBanNhieuPartial.cshtml" />
-    <Content Include="Views\Shared\NavPartial.cshtml" />
     <Content Include="Views\Shared\SliderPartial.cshtml" />
     <Content Include="Views\SachOnline\ChiTietSach.cshtml" />
     <Content Include="Views\User\DangKy.cshtml" />

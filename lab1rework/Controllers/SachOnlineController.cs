@@ -22,11 +22,6 @@ namespace lab1rework.Controllers
             return View(lstSaches.ToPagedList(pageNumber, pageSize));
         }
 
-        public ActionResult  NavPartial()
-        {
-            return PartialView();
-        }
-
         public ActionResult SliderPartial()
         {
             return PartialView();
@@ -70,11 +65,6 @@ namespace lab1rework.Controllers
         {
             var sach = db.SACHes.FirstOrDefault(s => s.Masach == MaSach);
             return View(sach);
-        }
-
-        public ActionResult GioHang()
-        {
-            return View();
         }
 
         public ActionResult MenuPartial()
