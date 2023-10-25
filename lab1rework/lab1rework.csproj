@@ -135,6 +135,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\SachOnlineController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -244,8 +245,8 @@
     <Content Include="Views\SachOnline\ChiTietSach.cshtml" />
     <Content Include="Views\User\DangKy.cshtml" />
     <Content Include="Views\User\DangNhap.cshtml" />
-    <Content Include="Views\SachOnline\GioHang.cshtml" />
     <Content Include="Views\SachOnline\MenuPartial.cshtml" />
+    <Content Include="Views\GioHang\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

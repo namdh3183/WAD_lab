@@ -8,7 +8,7 @@
 <h2 class="text-center">SÁCH MỚI</h2>
 <div class="col-12">
     <div class="row">
-        @foreach (var item in Model)
+        @foreach (lab1rework.Models.SACH item in Model)
         {
             <div class="card col-3" style="margin:30px">
                 <a href=@Url.Action("ChiTietSach", "SachOnline", new {MaSach=item.Masach})>
@@ -16,7 +16,7 @@
                     <div class="card-body">
                         <h5 class="card-title">@item.Tensach</h5>
                         <p class="card-text">@item.Mota</p>
-                        <a href="#" class="btn btn-primary">
+                        <a href="@Url.Action("ThemGioHang", "GioHang", new {Masach = item.Masach})" class="btn btn-primary">
                             <i class="bi bi-cart"></i>
                             Add to Cart
                         </a>
