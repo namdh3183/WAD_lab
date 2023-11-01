@@ -1,8 +1,15 @@
-﻿
+﻿@using lab1rework.Models
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_LayoutUser.cshtml";
 }
+
+@{ 
+    int total = 0;
+    int count = 0;
+    KHACHHANG kh = (KHACHHANG)Session["Taikhoan"];
+}
+
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
 </div>
@@ -10,9 +17,10 @@
     <div class="container h-100 py-5">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-10">
-
                 @foreach (dynamic item in Model)
                 {
+                    total += item.Thanhtien;
+                    count += item.Soluong;
                     <div class="card rounded-3 mb-4">
                         <div class="card-body p-4">
                             <div class="row d-flex justify-content-between align-items-center">
@@ -48,14 +56,58 @@
                     </div>
                 }
 
-                <div class="card">
-                    <div class="card-body">
-                        <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
+            <div class="card mb-4">
+                @using (Html.BeginForm())
+                {
+                    <div class="card-body p-4 d-flex flex-row">
+                        <div class="row form-outline flex-fill">
+                            <label class="row">Tổng sản phẩm: @count</label>
+                        </div>
                     </div>
-                </div>
+                    <div class="card-body p-4 d-flex flex-row">
+                        <div class="row form-outline flex-fill">
+                            <label class="row">Tổng tiền: @total.ToString("#,##0,0") VNĐ</label>
+                        </div>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-row">
+                        <div class="row form-outline flex-fill">
+                            <label class="form-label" for="form1">Họ tên: @kh.HoTen</label>
+                        </div>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-row">
+                        <div class="row form-outline flex-fill">
+                            <label class="form-label" for="form1">Địa chỉ: </label>
+                            <input type="text" class="form-control form-control-lg" name="DiachiKH" value="@kh.DiachiKH" />
+                        </div>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-row">
+                        <div class="row form-outline flex-fill">
+                            <label class="form-label" for="form1">SĐT nhận hàng: </label>
+                            <input type="text" class="form-control form-control-lg" name="DienthoaiKH" value="@kh.DienthoaiKH" />
+                        </div>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-row">
+                        <div class="row form-outline flex-fill">
+                            <label class="form-label" for="form1">Ngày đặt: </label>
+                            <input type="text" class="form-control form-control-lg" name="NgayDat" value="@DateTime.Now.ToString("yyyy-MM-dd")" disabled />
+                        </div>
+                    </div>
+                    <div class="card-body p-4 d-flex flex-row">
+                        <div class="row form-outline flex-fill">
+                            <label class="form-label" for="form1">Ngày giao: </label>
+                            <input type="text" class="form-control form-control-lg" name="NgayGiao" value="@DateTime.Now.AddDays(3).ToString("yyyy-MM-dd")" disabled />
+                        </div>
+                    </div>
+                }
+            </div>      
+
+            <div class="card">
+                 <div class="card-body">
+                            <button type="button" class="btn btn-warning btn-block btn-lg">Proceed to Pay</button>
+                 </div>
+            </div>
 
             </div>
         </div>
     </div>
 </section>
-

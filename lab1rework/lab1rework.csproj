@@ -149,6 +149,10 @@
     <Compile Include="Migrations\202310110635105_dsdsds.designer.cs">
       <DependentUpon>202310110635105_dsdsds.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202311010801550_adjhkf.cs" />
+    <Compile Include="Migrations\202311010801550_adjhkf.designer.cs">
+      <DependentUpon>202311010801550_adjhkf.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CHITIETDONTHANG.cs" />
     <Compile Include="Models\CHUDE.cs" />
@@ -246,6 +250,7 @@
     <Content Include="Views\User\DangNhap.cshtml" />
     <Content Include="Views\SachOnline\MenuPartial.cshtml" />
     <Content Include="Views\GioHang\Index.cshtml" />
+    <Content Include="Views\GioHang\XacNhanDatHang.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -261,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202310110635105_dsdsds.resx">
       <DependentUpon>202310110635105_dsdsds.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202311010801550_adjhkf.resx">
+      <DependentUpon>202311010801550_adjhkf.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -108,7 +108,23 @@ namespace lab1rework.Controllers
             db.CHITIETDONTHANGs.Remove(ct);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
 
+        [HttpPost]
+        public ActionResult DatHang(int MaDonHang, FormCollection f)
+        {
+            var dh = db.DONDATHANGs.FirstOrDefault(t => t.MaDonHang == MaDonHang);
+            if(dh != null)
+            {
+                //dh.Ngaydat = f[""];
+            }
+
+            return RedirectToAction("XacNhanDatHang", "GioHang");
+        }
+
+        public ActionResult XacNhanDatHang()
+        {
+            return View();
         }
     }
 }

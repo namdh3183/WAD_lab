@@ -57,33 +57,33 @@
             //context.NHAXUATBANs.AddRange(lstNXB);
 
 
-            var lstSach = new List<SACH>();
-            lstSach.Add(new SACH
-            {
-                Tensach = "ahfjahgd",
-                MaCD = 11,
-                MaNXB = 10,
-                Anhbia = "data:image/jpeg;base64," + Utility.ConvertImageToBase64("D:\\Web App Development Project\\lab1rework\\lab1rework\\Images\\41z1V0zP2WL.jpg")
-            });
+            //var lstSach = new List<SACH>();
+            //lstSach.Add(new SACH
+            //{
+            //    Tensach = "ahfjahgd",
+            //    MaCD = 11,
+            //    MaNXB = 10,
+            //    Anhbia = "data:image/jpeg;base64," + Utility.ConvertImageToBase64("D:\\Web App Development Project\\lab1rework\\lab1rework\\Images\\41z1V0zP2WL.jpg")
+            //});
 
-            lstSach.Add(new SACH
-            {
-                Tensach = "tdrstdd",
-                MaCD = 12,
-                MaNXB = 11,
-                Anhbia = "data:image/jpeg;base64," + Utility.ConvertImageToBase64("D:\\Web App Development Project\\lab1rework\\lab1rework\\Images\\41z1V0zP2WL.jpg")
-            });
+            //lstSach.Add(new SACH
+            //{
+            //    Tensach = "tdrstdd",
+            //    MaCD = 12,
+            //    MaNXB = 11,
+            //    Anhbia = "data:image/jpeg;base64," + Utility.ConvertImageToBase64("D:\\Web App Development Project\\lab1rework\\lab1rework\\Images\\41z1V0zP2WL.jpg")
+            //});
 
-            lstSach.Add(new SACH
-            {
-                Tensach = "tdgfrstdd",
-                MaCD = 13,
-                MaNXB = 12,
-                Anhbia = "data:image/jpeg;base64," + Utility.ConvertImageToBase64("D:\\Web App Development Project\\lab1rework\\lab1rework\\Images\\41z1V0zP2WL.jpg")
-            });
+            //lstSach.Add(new SACH
+            //{
+            //    Tensach = "tdgfrstdd",
+            //    MaCD = 13,
+            //    MaNXB = 12,
+            //    Anhbia = "data:image/jpeg;base64," + Utility.ConvertImageToBase64("D:\\Web App Development Project\\lab1rework\\lab1rework\\Images\\41z1V0zP2WL.jpg")
+            //});
 
-            lstSach.ForEach(s => context.SACHes.AddOrUpdate(s));
-            base.Seed(context);
+            //lstSach.ForEach(s => context.SACHes.AddOrUpdate(s));
+            //base.Seed(context);
         }
     }
 }
